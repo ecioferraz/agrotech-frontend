@@ -1,11 +1,13 @@
 // import PropTypes from 'prop-types';
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, TextInput } from '../components';
 
-export default function SearchFrom(
-  { handleClick, searchInput, setSearchInput },
-) {
+export default function SearchFrom() {
+  const [searchInput, setSearchInput] = useState('');
+
+  const handleClick = () => {};
+
   return (
     <form>
       <TextInput

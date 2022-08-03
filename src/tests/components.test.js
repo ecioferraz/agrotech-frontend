@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
 import { act, Simulate } from 'react-dom/test-utils';
-import { Button, TextInput } from '../components';
+import { Button, TextCard, TextInput } from '../components';
 
 describe('Components', () => {
   let container = null;
@@ -125,6 +125,39 @@ describe('Components', () => {
         Simulate.change(textInput, { target: { value: 'test' } });
       });
       expect(onChange).toHaveBeenCalledTimes(2);
+    });
+  });
+
+  describe('<TextCard />', () => {
+    let textCard;
+
+    beforeEach(() => {
+      act(() => {
+        render(
+          <TextCard
+            className="test"
+            text="test"
+          />,
+          container,
+        );
+      });
+
+      textCard = container.querySelector('div');
+    });
+
+    afterEach(() => {
+      textCard = null;
+    });
+
+    it('should render a div', () => {
+      expect(textCard).toBeTruthy();
+    });
+
+    it('should render a paragraph element inside of the div', () => {
+      expect(textCard.children[0].tagName).toBe('P');
+      const paragraph = textCard.children[0];
+      expect(paragraph.textContent).toBe('test');
+      expect(paragraph.className).toBe('test');
     });
   });
 });

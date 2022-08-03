@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-export default function TextCard({ text, className }) {
+export default function TextCard({ text }) {
   return (
     <div className="text-card">
-      <p className={ className }>
+      <p className="text-card-text">
         { text }
       </p>
     </div>
@@ -12,6 +12,5 @@ export default function TextCard({ text, className }) {
 }
 
 TextCard.propTypes = {
-  className: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
 };

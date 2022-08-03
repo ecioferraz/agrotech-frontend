@@ -1,7 +1,13 @@
 import React from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
 import { act, Simulate } from 'react-dom/test-utils';
-import { Button, StatusCard, TextCard, TextInput } from '../components';
+import {
+  Button,
+  ImageCard,
+  StatusCard,
+  TextCard,
+  TextInput,
+} from '../components';
 
 describe('Components', () => {
   let container = null;
@@ -190,6 +196,39 @@ describe('Components', () => {
       const paragraph = statusCard.children[0];
       expect(paragraph.textContent).toBe('test');
       expect(paragraph.className).toBe('status');
+    });
+  });
+
+  describe('<ImageCard />', () => {
+    let imageCard;
+    
+    beforeEach(() => {
+      act(() => {
+        render(
+          <ImageCard
+            imageURL={ 'https://picsum.photos/200/300' }
+            name={ 'Isle 1' }
+          />,
+          container,
+        );
+      });
+  
+      imageCard = container.querySelector('.image-card');
+    });
+  
+    afterEach(() => {
+      imageCard = null;
+    });
+  
+    it('should render a image card', () => {
+      expect(imageCard).toBeTruthy();
+    });
+  
+    it('should render a div with the price and image', () => {
+      const imageCardContent = imageCard.children[0];
+      expect(imageCardContent).toBeTruthy();
+      expect(imageCardContent.getAttribute('src'))
+        .toBe('https://picsum.photos/200/300');
     });
   });
 });

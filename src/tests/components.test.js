@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
 import { act, Simulate } from 'react-dom/test-utils';
-import { Button, TextCard, TextInput } from '../components';
+import { Button, StatusCard, TextCard, TextInput } from '../components';
 
 describe('Components', () => {
   let container = null;
@@ -26,10 +26,10 @@ describe('Components', () => {
       act(() => {
         render(
           <Button
-            type="button"
-            className="test"
+            type='button'
+            className='test'
             handleClick={ onClick }
-            name="test"
+            name='test'
           />,
           container,
         );
@@ -82,12 +82,12 @@ describe('Components', () => {
       act(() => {
         render(
           <TextInput
-            className="test"
-            name="test"
-            labelText="test"
-            value="test"
+            className='test'
+            name='test'
+            labelText='test'
+            value='test'
             onChange={ onChange }
-            type="text"
+            type='text'
           />,
           container,
         );
@@ -135,8 +135,8 @@ describe('Components', () => {
       act(() => {
         render(
           <TextCard
-            className="test"
-            text="test"
+            className='test'
+            text='test'
           />,
           container,
         );
@@ -158,6 +158,38 @@ describe('Components', () => {
       const paragraph = textCard.children[0];
       expect(paragraph.textContent).toBe('test');
       expect(paragraph.className).toBe('test');
+    });
+  });
+
+  describe('<StatusCard />', () => {
+    let statusCard;
+
+    beforeEach(() => {
+      act(() => {
+        render(
+          <StatusCard
+            status='test'
+          />,
+          container,
+        );
+      });
+
+      statusCard = container.querySelector('div');
+    });
+
+    afterEach(() => {
+      statusCard = null;
+    });
+
+    it('should render a div', () => {
+      expect(statusCard).toBeTruthy();
+    });
+
+    it('should render a paragraph element inside of the div', () => {
+      expect(statusCard.children[0].tagName).toBe('P');
+      const paragraph = statusCard.children[0];
+      expect(paragraph.textContent).toBe('test');
+      expect(paragraph.className).toBe('status');
     });
   });
 });

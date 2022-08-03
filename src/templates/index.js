@@ -1,7 +1,7 @@
 import IsleCard from './IsleCard';
 import SearchForm from './SearchForm';
 
-export default {
+export {
   IsleCard,
   SearchForm,
 };

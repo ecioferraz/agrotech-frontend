@@ -3,7 +3,7 @@ import React from 'react';
 import { ImageCard, StatusCard, TextCard } from '../components';
 
 export default function IsleCard(
-  { imageURL, name, status, isle },
+  { imageURL, name, status, temperature, airHumidite, soilHumidite, dateTime },
 ) {
   return (
     <div className="isle-card">
@@ -16,16 +16,16 @@ export default function IsleCard(
       />
       <div className="isle-card-info">
         <TextCard
-          text={ `${isle.temperature}°` }
+          text={ `${temperature}°` }
         />
         <TextCard
-          text={ `${isle.airHumidite}%` }
+          text={ `${airHumidite}%` }
         />
         <TextCard
-          text={ `${isle.soilHumidite}%` }
+          text={ `${soilHumidite}%` }
         />
         <TextCard
-          text={ isle.dateTime }
+          text={ dateTime }
         />
       </div>
     </div>
@@ -33,13 +33,11 @@ export default function IsleCard(
 }
 
 IsleCard.propTypes = {
+  airHumidite: PropTypes.number.isRequired,
+  dateTime: PropTypes.string.isRequired,
   imageURL: PropTypes.string.isRequired,
-  isle: PropTypes.shape({
-    airHumidite: PropTypes.number.isRequired,
-    dateTime: PropTypes.string.isRequired,
-    soilHumidite: PropTypes.number.isRequired,
-    temperature: PropTypes.number.isRequired
-  }),
   name: PropTypes.string.isRequired,
-  status: PropTypes.string.isRequired
+  soilHumidite: PropTypes.number.isRequired,
+  status: PropTypes.string.isRequired,
+  temperature: PropTypes.number.isRequired,
 };

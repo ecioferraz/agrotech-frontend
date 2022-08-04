@@ -46,7 +46,6 @@ describe('Components', () => {
       expect(textCard.children[0].tagName).toBe('P');
       const paragraph = textCard.children[0];
       expect(paragraph.textContent).toBe('test');
-      expect(paragraph.className).toBe('test');
     });
   });
 });

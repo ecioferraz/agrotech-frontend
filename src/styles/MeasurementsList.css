@@ -1,0 +1,22 @@
+.measurements-list-body {
+  display: flex;
+  flex-direction: column;
+  flex-flow: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  margin: 2%;
+  width: 27%;
+  float: right;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: relative;
+  top: 50px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2em;
+  position: fixed;
+  top: 0;
+}

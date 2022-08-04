@@ -36,15 +36,13 @@ export default function MeasurementsList() {
       {
         loading ? (
           <div className="loading">
-            <div className="loading-icon">
-              <i className="fas fa-spinner fa-pulse"></i>
-            </div>
             <div className="loading-text">
               <p>Carregando...</p>
             </div>
           </div>
         ) : (
           <div className="measurements-list-body">
+            <h1>MEASUREMENTS LIVE</h1>
             {
               measurements.map(({
                 isleName,

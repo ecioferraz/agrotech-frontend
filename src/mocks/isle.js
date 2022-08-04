@@ -6,7 +6,8 @@ const isleMock = [
     airHumidite: 80,
     soilHumidite: 30,
     dateTime: '03/08/2022',
-    imageURL: '',
+    imageURL: 'https://s3-us-west-2.amazonaws.com/'
+    + 'planet-gallery/full/china-plain-farming-full.jpg',
   },
   {
     name: 'Vermelha',
@@ -15,7 +16,8 @@ const isleMock = [
     airHumidite: 30.9,
     soilHumidite: 26,
     dateTime: '03/08/2022',
-    imageURL: '',
+    imageURL: 'https://s3-us-west-2.amazonaws.com/'
+    + 'planet-gallery/full/serranopolis-mosaic-ecosystem-full.jpg',
   },
   {
     name: 'Verde',
@@ -24,7 +26,8 @@ const isleMock = [
     airHumidite: 80,
     soilHumidite: 60,
     dateTime: '03/08/2022',
-    imageURL: '',
+    imageURL: 'https://s3-us-west-2.amazonaws.com/'
+    + 'planet-gallery/full/aruana-brazil-full.jpg',
   },
   {
     name: 'Laranja',
@@ -33,7 +36,8 @@ const isleMock = [
     airHumidite: 34.1,
     soilHumidite: 68.9,
     dateTime: '03/08/2022',
-    imageURL: '',
+    imageURL: 'https://s3-us-west-2.amazonaws.com/'
+    + 'planet-gallery/full/tierras-bajas-full.jpg',
   },
 ];
 

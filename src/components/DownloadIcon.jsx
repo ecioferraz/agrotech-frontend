@@ -4,7 +4,7 @@ import React from 'react';
 
 export default function DownloadIcon() {
   return (
-    <div>
+    <div className="download-icon">
       <FontAwesomeIcon icon={faDownload} />
     </div>
   );

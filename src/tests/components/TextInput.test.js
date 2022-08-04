@@ -1,18 +1,20 @@
 import React from 'react';
-import { render, unmountComponentAtNode } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { act, Simulate } from 'react-dom/test-utils';
 import { TextInput } from '../../components';
 
 describe('Components', () => {
   let container = null;
+  let root = null;
 
   beforeEach(() => {
     container = document.createElement('div');
     document.body.appendChild(container);
+    root = createRoot(container);
   });
 
   afterEach(() => {
-    unmountComponentAtNode(container);
+    act(() => root.unmount(container));
     container.remove();
     container = null;
   });
@@ -24,7 +26,7 @@ describe('Components', () => {
 
     beforeEach(() => {
       act(() => {
-        render(
+        root.render(
           <TextInput
             className='test'
             name='test'
@@ -33,7 +35,6 @@ describe('Components', () => {
             onChange={ onChange }
             type='text'
           />,
-          container,
         );
       });
 

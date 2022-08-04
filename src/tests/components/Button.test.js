@@ -1,18 +1,20 @@
 import React from 'react';
-import { render, unmountComponentAtNode } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { act } from 'react-dom/test-utils';
 import { Button } from '../../components';
 
 describe('Components', () => {
   let container = null;
+  let root = null;
 
   beforeEach(() => {
     container = document.createElement('div');
     document.body.appendChild(container);
+    root = createRoot(container);
   });
 
   afterEach(() => {
-    unmountComponentAtNode(container);
+    act(() => root.unmount(container));
     container.remove();
     container = null;
   });
@@ -24,14 +26,13 @@ describe('Components', () => {
 
     beforeEach(async () => {
       act(() => {
-        render(
+        root.render(
           <Button
             type='button'
             className='test'
             handleClick={ onClick }
             name='test'
           />,
-          container,
         );
       });
 

@@ -1,18 +1,20 @@
 import React from 'react';
-import { render, unmountComponentAtNode } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { act } from 'react-dom/test-utils';
 import { StatusCard } from '../../components';
 
 describe('Components', () => {
   let container = null;
+  let root = null;
 
   beforeEach(() => {
     container = document.createElement('div');
     document.body.appendChild(container);
+    root = createRoot(container);
   });
 
   afterEach(() => {
-    unmountComponentAtNode(container);
+    act(() => root.unmount(container));
     container.remove();
     container = null;
   });
@@ -22,11 +24,10 @@ describe('Components', () => {
 
     beforeEach(() => {
       act(() => {
-        render(
+        root.render(
           <StatusCard
             status='test'
           />,
-          container,
         );
       });
 

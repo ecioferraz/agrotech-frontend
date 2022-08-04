@@ -1,5 +1,3 @@
-// import PropTypes from 'prop-types';
-import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import { Button, TextInput } from '../components';
 
@@ -27,9 +25,3 @@ export default function SearchForm() {
     </form>
   );
 }
-
-SearchForm.propTypes = {
-  handleClick: PropTypes.func.isRequired,
-  searchInput: PropTypes.string.isRequired,
-  setSearchInput: PropTypes.func.isRequired,
-};

@@ -1,0 +1,65 @@
+.isle-card {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  margin: 20px;
+  overflow: hidden;
+  transition: all .2s ease-in-out;
+  width: 350px;
+}
+
+.isle-image {
+  width: 100%;
+}
+
+.isle-card:hover {
+  transform: scale(1.05);
+}
+
+.isle-card-body {
+  align-items: center;
+  display: flex;
+  /* flex: 1 1 auto; */
+  justify-content: space-between;
+  padding: 0 12px;
+}
+
+.isle-info {
+  margin: 0;
+  align-items: center;
+  display: flex;
+}
+
+.download-icon {
+  z-index: 100;
+}
+
+.text-card-text {
+  height: fit-content;
+  margin: 10px 0px 5px 10px;
+}
+
+.status-card {
+  position: fixed;
+}
+
+.active-status {
+  background-color: #0a7d10;
+  border-radius: 25px;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 9px;
+}
+
+.inactive-status {
+  background-color: #b92222;
+  border-radius: 25px;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 9px;
+}

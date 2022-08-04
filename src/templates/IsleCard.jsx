@@ -1,6 +1,14 @@
+import {
+  faCalendar,
+  faDroplet,
+  faHandHoldingDroplet,
+  faTemperatureHalf,
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { DownloadIcon, ImageCard, StatusCard, TextCard } from '../components';
+import '../styles/IsleCard.css';
 
 export default function IsleCard(
   { imageURL, name, status, temperature, airHumidite, soilHumidite, dateTime },
@@ -15,19 +23,36 @@ export default function IsleCard(
         status={ status }
       />
       <DownloadIcon />
-      <div className="isle-card-info">
-        <TextCard
-          text={ `${temperature}°` }
-        />
-        <TextCard
-          text={ `${airHumidite}%` }
-        />
-        <TextCard
-          text={ `${soilHumidite}%` }
-        />
-        <TextCard
-          text={ dateTime }
-        />
+      <div className="isle-card-body">
+        <div>
+          <div className="isle-info">
+            <FontAwesomeIcon icon={faTemperatureHalf} />
+            <TextCard
+              text={ `${temperature}°` }
+            />
+          </div>
+          <div className="isle-info">
+            <FontAwesomeIcon icon={faDroplet} />
+            <TextCard
+              text={ `${airHumidite}%` }
+            />
+          </div>
+        </div>
+        <div>
+          <div className="isle-info">
+            <FontAwesomeIcon icon={faHandHoldingDroplet} />
+            <TextCard
+              text={ `${soilHumidite}%` }
+            />
+          </div>
+          <div className="isle-info">
+            <FontAwesomeIcon icon={faCalendar} />
+            <TextCard
+            
+              text={ dateTime }
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

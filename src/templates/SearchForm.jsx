@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { Button, TextInput } from '../components';
 
+import '../styles/SearchForm.css';
+
 export default function SearchForm() {
   const [searchInput, setSearchInput] = useState('');
 
   const handleClick = () => {};
 
   return (
-    <form>
+    <form className="search-form">
       <TextInput
         className="search-input"
         type="text"
@@ -17,7 +19,7 @@ export default function SearchForm() {
         onChange={ ({ target: { value } }) => setSearchInput(value) }
       />
       <Button
-        name="searchBtn"
+        name="Buscar"
         handleClick={ handleClick }
         className="search-btn"
         disabled={ !searchInput.length }

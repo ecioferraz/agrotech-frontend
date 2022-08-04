@@ -7,18 +7,22 @@ export default function Home() {
   return (
     <>
       <SearchForm />
-      { isleMock.map((isle) => (
-        <IsleCard
-          key={isle.name}
-          name={isle.name}
-          imageURL={isle.imageURL}
-          status={isle.status}
-          temperature={isle.temperature}
-          airHumidite={isle.airHumidite}
-          soilHumidite={isle.soilHumidite}
-          dateTime={isle.dateTime}
-        />
-      )) }
+      <div className="isles">
+        <div className="isle-cards">
+          { isleMock.map((isle) => (
+            <IsleCard
+              key={isle.name}
+              name={isle.name}
+              imageURL={isle.imageURL}
+              status={isle.status}
+              temperature={isle.temperature}
+              airHumidite={isle.airHumidite}
+              soilHumidite={isle.soilHumidite}
+              dateTime={isle.dateTime}
+            />
+          )) }
+        </div>
+      </div>
     </>
   );
 }

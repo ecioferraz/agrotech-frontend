@@ -10,6 +10,7 @@ export default function Home() {
       { isleMock.map((isle) => (
         <IsleCard
           key={isle.name}
+          name={isle.name}
           imageURL={isle.imageURL}
           status={isle.status}
           temperature={isle.temperature}

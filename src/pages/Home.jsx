@@ -1,6 +1,6 @@
 import React from 'react';
-import IsleCard from '../templates/IsleCard';
-import { SearchForm } from '../templates';
+import GenericCard from '../templates/GenericCard';
+import SearchForm from '../templates/SearchForm';
 import isleMock from '../mocks/isle';
 
 export default function Home() {
@@ -10,7 +10,7 @@ export default function Home() {
       <div className="isles">
         <div className="isle-cards">
           { isleMock.map((isle) => (
-            <IsleCard
+            <GenericCard
               key={isle.name}
               name={isle.name}
               imageURL={isle.imageURL}

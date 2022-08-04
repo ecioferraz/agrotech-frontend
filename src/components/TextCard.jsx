@@ -3,11 +3,9 @@ import React from 'react';
 
 export default function TextCard({ text }) {
   return (
-    <div className="text-card">
-      <p className="text-card-text">
-        { text }
-      </p>
-    </div>
+    <p className="text-card-text">
+      { text }
+    </p>
   );
 }
 

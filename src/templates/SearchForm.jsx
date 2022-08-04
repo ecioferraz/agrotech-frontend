@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import { Button, TextInput } from '../components';
 
-export default function SearchFrom() {
+export default function SearchForm() {
   const [searchInput, setSearchInput] = useState('');
 
   const handleClick = () => {};
@@ -28,7 +28,7 @@ export default function SearchFrom() {
   );
 }
 
-SearchFrom.propTypes = {
+SearchForm.propTypes = {
   handleClick: PropTypes.func.isRequired,
   searchInput: PropTypes.string.isRequired,
   setSearchInput: PropTypes.func.isRequired,

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { ImageCard, StatusCard, TextCard } from '../components';
+import { DownloadIcon, ImageCard, StatusCard, TextCard } from '../components';
 
 export default function IsleCard(
   { imageURL, name, status, temperature, airHumidite, soilHumidite, dateTime },
@@ -14,6 +14,7 @@ export default function IsleCard(
       <StatusCard
         status={ status }
       />
+      <DownloadIcon />
       <div className="isle-card-info">
         <TextCard
           text={ `${temperature}°` }

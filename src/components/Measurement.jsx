@@ -10,12 +10,18 @@ import React from 'react';
 import { TextCard } from '../components';
 import '../styles/Measurement.css';
 
-export default function Measurement({ isleName, temperature, airHumidity, soilHumidity, createdAt }) {
+export default function Measurement({
+  isleName,
+  temperature,
+  airHumidity,
+  soilHumidity,
+  createdAt
+}) {
   return (
     <div className="measurement-card">
       <div className="measurement-card-body">
         <div>
-        <div className="measurement-info">
+          <div className="measurement-info">
             <TextCard
               text={ `Ilha ${isleName}` }
             />

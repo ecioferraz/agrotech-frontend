@@ -7,18 +7,31 @@ export default function MeasurementsList() {
   const [measurements, setMeasurements] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  const fetchIsleName = async (measurements) => {
+    const { data } = await getData('isle');
+
+    const measurements_with_isle_name = measurements.map((measurement)=> {
+      const isle = data.find((isle)=> {
+        return isle.id === measurement.idIsle;
+      }).name;
+      return { ...measurement, isleName: isle };
+    } );
+    setMeasurements(measurements_with_isle_name);
+  };
+
   const fetchMeasurements = async () => {
     setLoading(true);
-    const measurementsList = await getData('measurements');
-    setMeasurements(measurementsList);
+    const { data } = await getData('measurement');
+    await fetchIsleName(data);
     setLoading(false);
-  }
+  };
 
   useEffect(() => {
     fetchMeasurements();
   } , []);
 
   return (
+
     <div className="measurements-list">
       {
         loading ? (
@@ -33,13 +46,25 @@ export default function MeasurementsList() {
         ) : (
           <div className="measurements-list-body">
             {
-              measurements.map(({ isleName, temperature, soilHumidity, airHumidity, createdAt }) => (
-                <Measurement key={ isleName } isleName={ isleName } temperature={ temperature } airHumidity={ airHumidity } soilHumidity={ soilHumidity } createdAt={ createdAt } />
+              measurements.map(({
+                isleName,
+                temperature,
+                soilHumidity,
+                airHumidity,
+                measuredAt
+              }) => (
+                <Measurement
+                  key={ isleName }
+                  isleName={ isleName }
+                  temperature={ temperature }
+                  airHumidity={ airHumidity }
+                  soilHumidity={ soilHumidity }
+                  createdAt={ measuredAt } />
               ))
             }
           </div>
         )
       }
     </div>
-  )
+  );
 }

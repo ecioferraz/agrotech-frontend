@@ -29,13 +29,13 @@ export default function Measurement({
           <div className="measurement-info">
             <FontAwesomeIcon icon={faTemperatureHalf} />
             <TextCard
-              text={ `${temperature}°` }
+              text={ `${temperature.toFixed(2)}°` }
             />
           </div>
           <div className="measurement-info">
             <FontAwesomeIcon icon={faDroplet} />
             <TextCard
-              text={ `${airHumidity}%` }
+              text={ `${airHumidity.toFixed(2)}%` }
             />
           </div>
         </div>
@@ -43,13 +43,13 @@ export default function Measurement({
           <div className="measurement-info">
             <FontAwesomeIcon icon={faHandHoldingDroplet} />
             <TextCard
-              text={ `${soilHumidity}%` }
+              text={ `${soilHumidity.toFixed(2)}%` }
             />
           </div>
           <div className="measurement-info">
             <FontAwesomeIcon icon={faCalendar} />
             <TextCard
-              text={ createdAt }
+              text={ new Date(createdAt).toLocaleString() }
             />
           </div>
         </div>

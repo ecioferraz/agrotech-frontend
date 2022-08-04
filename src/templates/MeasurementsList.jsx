@@ -13,8 +13,8 @@ export default function MeasurementsList() {
     const measurements_with_isle_name = measurements.map((measurement)=> {
       const isle = data.find((isle)=> {
         return isle.id === measurement.idIsle;
-      }).name;
-      return { ...measurement, isleName: isle };
+      });
+      return { ...measurement, isleName: isle ? isle.name : '--- test ---' };
     } );
     setMeasurements(measurements_with_isle_name);
   };
@@ -54,7 +54,7 @@ export default function MeasurementsList() {
                 measuredAt
               }) => (
                 <Measurement
-                  key={ isleName }
+                  key={ measuredAt }
                   isleName={ isleName }
                   temperature={ temperature }
                   airHumidity={ airHumidity }

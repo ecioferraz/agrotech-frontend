@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/agrotech-frontend/static/css/main.652f5c88.css",
+    "main.js": "/agrotech-frontend/static/js/main.30a09c75.js",
+    "static/js/787.dd7b70a5.chunk.js": "/agrotech-frontend/static/js/787.dd7b70a5.chunk.js",
+    "index.html": "/agrotech-frontend/index.html",
+    "main.652f5c88.css.map": "/agrotech-frontend/static/css/main.652f5c88.css.map",
+    "main.30a09c75.js.map": "/agrotech-frontend/static/js/main.30a09c75.js.map",
+    "787.dd7b70a5.chunk.js.map": "/agrotech-frontend/static/js/787.dd7b70a5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.652f5c88.css",
+    "static/js/main.30a09c75.js"
+  ]
+}

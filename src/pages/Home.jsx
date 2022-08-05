@@ -12,7 +12,6 @@ export default function Home() {
         <SearchIsle />
       </main>
       <aside className="sidebar">
-        <h2>Measurements Live</h2>
         <MeasurementsList />
       </aside>
     </div>

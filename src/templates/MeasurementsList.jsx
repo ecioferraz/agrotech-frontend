@@ -33,6 +33,7 @@ export default function MeasurementsList() {
   return (
 
     <div className="measurements-list">
+      <h2>Measurements Live</h2>
       {
         loading ? (
           <div className="loading">
@@ -43,7 +44,7 @@ export default function MeasurementsList() {
         ) : (
           <div className="measurements-list-body">
             {
-              measurements.map(({
+              measurements.slice(0, 10).reverse().map(({
                 isleName,
                 temperature,
                 soilHumidity,

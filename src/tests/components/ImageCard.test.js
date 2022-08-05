@@ -26,8 +26,8 @@ describe('Components', () => {
       act(() => {
         root.render(
           <ImageCard
-            imageURL={ 'https://picsum.photos/200/300' }
-            name={ 'Isle 1' }
+            imageURL="https://picsum.photos/200/300"
+            name="Isle 1"
           />,
         );
       });
@@ -43,7 +43,7 @@ describe('Components', () => {
       expect(imageCard).toBeTruthy();
     });
   
-    it('should render a div with the price and image', () => {
+    it('should render a div with the image', () => {
       const imageCardContent = imageCard.children[0];
       expect(imageCardContent).toBeTruthy();
       expect(imageCardContent.getAttribute('src'))

@@ -11,3 +11,9 @@
   overflow-x: hidden;
   position: relative;
 }
+
+.measurements-list h2 {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}

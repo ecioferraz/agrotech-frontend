@@ -8,7 +8,7 @@ export default function MeasurementsList() {
   const [loading, setLoading] = useState(false);
 
   const fetchIsleName = async (measurements) => {
-    const { data } = await getData('isle');
+    const { data } = await getData('isles');
 
     const measurements_with_isle_name = measurements.map((measurement)=> {
       const isle = data.find((isle)=> {

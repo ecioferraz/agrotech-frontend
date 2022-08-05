@@ -1,12 +1,11 @@
 import React from 'react';
-// import Home from './pages/Home';
-import MeasurementsList from './templates/MeasurementsList';
 import './styles/App.css';
+import Home from './pages/Home';
 
 export default function App() {
   return (
     <div className="App">
-      <MeasurementsList />
+      <Home />
     </div>
   );
 }

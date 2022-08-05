@@ -5,6 +5,7 @@ import StatusCard from './StatusCard';
 import TextCard from './TextCard';
 import TextInput from './TextInput';
 import Measurement from './Measurement';
+import ListImages from './ListImages';
 
 export {
   Button,
@@ -14,4 +15,5 @@ export {
   TextCard,
   TextInput,
   Measurement,
+  ListImages,
 };

@@ -4,11 +4,11 @@
   border-radius: 8px;
   display: flex;
   flex-direction: column;
-  height: 200px;
+  height: 280px;
   margin: 20px;
   overflow: hidden;
   transition: all .2s ease-in-out;
-  width: 350px;
+  width: 300px;
 }
 
 .isle-image {
@@ -22,7 +22,7 @@
 .isle-card-body {
   align-items: center;
   display: flex;
-  /* flex: 1 1 auto; */
+  flex: 1 1 auto;
   justify-content: space-between;
   padding: 0 12px;
 }

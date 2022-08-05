@@ -5,7 +5,7 @@ export default function StatusCard({ status }) {
   return (
     <div className="status-card">
       <p
-        className={ status === 'Ativa' ? 'active-status' : 'inactive-status' }
+        className={ status ? 'active-status' : 'inactive-status' }
       >
         { status }
       </p>
@@ -14,5 +14,5 @@ export default function StatusCard({ status }) {
 }
 
 StatusCard.propTypes = {
-  status: PropTypes.string.isRequired,
+  status: PropTypes.bool.isRequired,
 };

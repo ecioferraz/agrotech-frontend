@@ -32,7 +32,7 @@ describe('Components', () => {
         );
       });
 
-      textCard = container.querySelector('div');
+      textCard = container.querySelector('.text-card-text');
     });
 
     afterEach(() => {
@@ -44,9 +44,8 @@ describe('Components', () => {
     });
 
     it('should render a paragraph element inside of the div', () => {
-      expect(textCard.children[0].tagName).toBe('P');
-      const paragraph = textCard.children[0];
-      expect(paragraph.textContent).toBe('test');
+      expect(textCard.tagName).toBe('P');
+      expect(textCard.textContent).toBe('test');
     });
   });
 });

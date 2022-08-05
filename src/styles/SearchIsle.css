@@ -1,0 +1,13 @@
+.search-isle-body {
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  flex-flow: wrap;
+  height: 200px;
+  justify-content: center;
+  margin: 5%;
+  max-height: 300px;
+}

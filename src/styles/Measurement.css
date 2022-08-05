@@ -19,3 +19,7 @@
   justify-content: center;
   flex-flow: wrap;
 }
+
+.text-card-text {
+  margin: 5%;
+}

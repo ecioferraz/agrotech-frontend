@@ -6,10 +6,8 @@
   align-items: center;
   height: 600px;
   margin: 2%;
-  width: 27%;
   float: right;
   overflow-y: scroll;
   overflow-x: hidden;
   position: relative;
-  top: 50px;
 }

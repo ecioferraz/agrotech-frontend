@@ -13,7 +13,7 @@ export default function SearchIsle() {
   useEffect(() => {
     const getIsles = async () => {
       setIsLoading(true);
-      const { data } = await getData('isle');
+      const { data } = await getData('isles');
       setIsles(data);
       setIsLoading(false);
     };

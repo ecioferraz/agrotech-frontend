@@ -21,7 +21,7 @@ export default function MeasurementsList() {
 
   const fetchMeasurements = async () => {
     setLoading(true);
-    const { data } = await getData('measurement');
+    const { data } = await getData('measurements');
     await fetchIsleName(data);
     setLoading(false);
   };

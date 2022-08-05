@@ -1,18 +1,20 @@
 import React from 'react';
-import MeasurementsList from '../templates/MeasurementsList';
 import SatelliteCard from '../templates/SatelliteCard';
 import SearchIsle from '../templates/SearchIsle';
+import MeasurementsList from '../templates/MeasurementsList';
 
 export default function Home() {
   return (
-    <div>
-      <div>
+    <div className="home">
+      <h1>Agrotech Measure Shelter</h1>
+      <main>
         <SatelliteCard />
         <SearchIsle />
-      </div>
-      <div>
+      </main>
+      <aside className="sidebar">
+        <h2>Measurements Live</h2>
         <MeasurementsList />
-      </div>
+      </aside>
     </div>
   );
 }

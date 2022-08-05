@@ -30,10 +30,11 @@ export default function SatelliteCard() {
     <div className="satellite-card">
       { !isLoading ? (
         <>
-          <div className="satellite-image">
+          <div>
             <ImageCard
               imageURL={baseUrl + imgUrl}
               name="satellite"
+              className='satellite-image'
             />
           </div>
           <section className="satellite-body">

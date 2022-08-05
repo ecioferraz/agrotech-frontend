@@ -37,12 +37,11 @@ export default function MeasurementsList() {
         loading ? (
           <div className="loading">
             <div className="loading-text">
-              <p>Carregando...</p>
+              <p>Loading...</p>
             </div>
           </div>
         ) : (
           <div className="measurements-list-body">
-            <h1>MEASUREMENTS LIVE</h1>
             {
               measurements.map(({
                 isleName,

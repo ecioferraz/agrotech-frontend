@@ -9,7 +9,6 @@ export default function ListImages({ list }) {
 
   return (
     <div className='satellite-list'>
-      {console.log(list)}
       <div className="status-card">
         {list.map((imagens) => {
           return (

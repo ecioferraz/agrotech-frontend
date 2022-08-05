@@ -8,6 +8,7 @@ import '../styles/SearchIsle.css';
 export default function SearchIsle() {
   const [isles, setIsles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [searchInput, setSearchInput] = useState('');
 
   useEffect(() => {
     const getIsles = async () => {
@@ -20,16 +21,23 @@ export default function SearchIsle() {
     getIsles();
   }, []);
 
+  const filteredIsle = searchInput.length
+    ? isles.filter(({ name }) => name.includes(searchInput))
+    : [];
+
   return (
     <div className="search-isle-body">
-      <SearchForm />
+      <SearchForm
+        searchInput={ searchInput }
+        setSearchInput={ setSearchInput }
+      />
       <div className="mini-isles">
         <div className="mini-isle-cards">
           { isLoading
             ? <p>Loading...</p>
             : <IslesTable
               index={ ['Ilha', 'Status'] }
-              body={ isles }
+              body={ searchInput.length ? filteredIsle : isles }
             />
           }
         </div>

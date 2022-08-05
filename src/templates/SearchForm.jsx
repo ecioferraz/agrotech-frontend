@@ -1,13 +1,10 @@
-import React, { useState } from 'react';
-import { Button, TextInput } from '../components';
+import PropTypes from 'prop-types';
+import React from 'react';
+import { TextInput } from '../components';
 
 import '../styles/SearchForm.css';
 
-export default function SearchForm() {
-  const [searchInput, setSearchInput] = useState('');
-
-  const handleClick = () => {};
-
+export default function SearchForm({ searchInput, setSearchInput }) {
   return (
     <form className="search-form">
       <TextInput
@@ -18,12 +15,11 @@ export default function SearchForm() {
         placeholder="Pesquise uma ilha"
         onChange={ ({ target: { value } }) => setSearchInput(value) }
       />
-      <Button
-        name="Buscar"
-        handleClick={ handleClick }
-        className="search-btn"
-        disabled={ !searchInput.length }
-      />
     </form>
   );
 }
+
+SearchForm.propTypes = {
+  searchInput: PropTypes.string.isRequired,
+  setSearchInput: PropTypes.func.isRequired,
+};
